@@ -1,3 +1,4 @@
+import Vue from 'vue'
 import axios from 'axios'
 import router from '@/router/index'
 import {getUserInfo} from '@/assets/js/auth'
@@ -10,14 +11,20 @@ const httpPlugin = {}
 //   // 云服务器（本地环境）
 //   baseURL: 'http://krj/krjrobot/'
 // })
-// const http = axios.create({
-//   // 云服务器（测试环境）
-//   baseURL: 'https://dev.krjrobot.cn/krjrobot/'
-// })
 const http = axios.create({
-  // 云服务器（生产环境）
-  baseURL: 'https://krjrobot.cn/krjrobot/'
+  // 云服务器（测试环境）
+  baseURL: 'https://dev.krjrobot.cn/krjrobot/'
 })
+// const http = axios.create({
+//   // 云服务器（生产环境）
+//   baseURL: 'https://krjrobot.cn/krjrobot/'
+// })
+
+// 全局图片测试地址
+Vue.prototype.urlImg = 'https://dev.krjrobot.cn/krjrobot/'
+// 全局图片生产地址
+// Vue.prototype.urlImg = 'https://krjrobot.cn/krjrobot/'
+
 /*
 添加请求拦截器
 拦截器本身就是一个方法

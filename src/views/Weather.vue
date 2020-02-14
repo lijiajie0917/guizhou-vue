@@ -381,7 +381,7 @@ export default {
       this.weatherTable(this.form.nodeId,this.form.nameId);
     },
     getImgUrl(icon){
-       return "https://krjrobot.cn/krjrobot/img/syspage/"+icon
+      return this.urlImg + "img/syspage/" + icon
     },
     async soilTemperature (timeAge,dataAge,columnName) {
         if (dataAge.length > 40) {

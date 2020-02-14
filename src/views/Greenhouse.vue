@@ -573,8 +573,7 @@ export default {
       this.weatherTable(this.form.nameId,this.objNode);
     },
     getImgUrl(icon){
-       return "http://192.168.3.29/krjrobot/img/greenhouse/" + icon
-       // return "https://krjrobot.cn/krjrobot/img/greenhouse"+icon
+       return this.urlImg + "img/greenhouse/" + icon
     },
     async soilTemperature (timeAge,dataAge,columnName) {
 
