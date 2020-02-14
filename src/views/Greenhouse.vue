@@ -312,11 +312,11 @@ export default {
       if(num != 0){
         if(num>0){
           solit = solit+solitNum;
-          console.log(solit);
+          // console.log(solit);
           return solit;
         }else{
           solit = solit+solitNum;
-          console.log(solit);
+          // console.log(solit);
           return solit;
         }
       }else{
@@ -573,7 +573,7 @@ export default {
       this.weatherTable(this.form.nameId,this.objNode);
     },
     getImgUrl(icon){
-       return "http://192.168.3.29/krjrobot/img/greenhouse/" + icon
+       return this.urlImg +"img/greenhouse/" + icon
        // return "https://krjrobot.cn/krjrobot/img/greenhouse"+icon
     },
     async soilTemperature (timeAge,dataAge,columnName) {

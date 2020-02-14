@@ -175,11 +175,11 @@ export default {
   methods: {
 
     getImgUrl(icon){
-       return "http://192.168.3.29/krjrobot/img/"+icon
+       return this.urlImg+"img/"+icon
        // return "https://krjrobot.cn/krjrobot/img/"+icon
     },
     getImgUrl2(icon){
-       return "http://192.168.3.29/krjrobot/img/"+icon
+       return this.urlImg+"img/"+icon
        // return "https://krjrobot.cn/krjrobot/img/"+icon
     },
 

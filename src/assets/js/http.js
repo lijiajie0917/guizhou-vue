@@ -1,6 +1,16 @@
 import axios from 'axios'
 import router from '@/router/index'
 import {getUserInfo} from '@/assets/js/auth'
+
+
+// 云服务器（本地环境）
+// const addURL = "https://dev.krjrobot.cn/krjrobot/";
+ // 云服务器（测试环境）
+const addURL = "https://dev.krjrobot.cn/krjrobot/";
+// 云服务器（生产环境）
+// const addURL = "https://dev.krjrobot.cn/krjrobot/";
+
+
 // 定义一个插件对象
 const httpPlugin = {}
 // 为插件对象添加一个成员：install
@@ -10,14 +20,14 @@ const httpPlugin = {}
 //   // 云服务器（本地环境）
 //   baseURL: 'http://krj/krjrobot/'
 // })
-// const http = axios.create({
-//   // 云服务器（测试环境）
-//   baseURL: 'https://dev.krjrobot.cn/krjrobot/'
-// })
 const http = axios.create({
-  // 云服务器（生产环境）
-  baseURL: 'https://krjrobot.cn/krjrobot/'
+  // 云服务器（测试环境）
+  baseURL: addURL
 })
+// const http = axios.create({
+//   // 云服务器（生产环境）
+//   baseURL: 'https://krjrobot.cn/krjrobot/'
+// })
 /*
 添加请求拦截器
 拦截器本身就是一个方法
@@ -80,6 +90,7 @@ http.interceptors.response.use(function (response) {
 httpPlugin.install = function (Vue, options) {
   // 添加实例方法
   Vue.prototype.$http = http
+  Vue.prototype.urlImg = addURL
 }
 // 导出插件对象
 export default httpPlugin
