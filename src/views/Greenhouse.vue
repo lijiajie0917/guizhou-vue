@@ -375,17 +375,15 @@ export default {
             this.equipForm = [];
             this.formEquip.device = '';
             this.nodeinfoId = "";
-            this.form.nameId = '';
           } else {
             this.equipForm = arr[0].area[0].greenhouse[0].node;
             this.formEquip.device = arr[0].area[0].greenhouse[0].node[0].nodeId;
             this.form.gatewayId = this.items3[0].key;
-            this.form.nameId = arr[0].area[0].greenhouse[0].node[0].nodeId;
             this.nodeinfoId = arr[0].area[0].greenhouse[0].node[0].gatewayId;
             this.objNode = this.nodeinfoId;
             this.getGreenhouse(this.formEquip.device,this.nodeinfoId);
-            this.sysTypeAge(this.form.nameId,this.nodeinfoId,this.form.gatewayId,this.columnNameIndex);
-            this.weatherTable(this.form.nameId,this.objNode);
+            this.sysTypeAge(this.formEquip.device,this.nodeinfoId,this.form.gatewayId,this.columnNameIndex);
+            this.weatherTable(this.formEquip.device,this.objNode);
             // this.tableData3Fun(this.form.nameId,this.nodeinfoId,this.form.gatewayId,this.columnNameIndex);
           }
         } else if (array.level == "area") {
@@ -402,11 +400,10 @@ export default {
             this.equipForm = [];
             this.formEquip.device = '';
             this.nodeinfoId = "";
-            this.form.nameId = '';
           } else {
             this.equipForm = arr1[0].greenhouse[0].node;
             this.formEquip.device = arr1[0].greenhouse[0].node[0].nodeId;
-            this.form.nameId = arr1[0].greenhouse[0].node[0].nodeId;
+            this.formEquip.device = arr1[0].greenhouse[0].node[0].nodeId;
             this.nodeinfoId = arr1[0].greenhouse[0].node[0].gatewayId;
             this.getGreenhouse(this.formEquip.device,this.nodeinfoId);
           }
@@ -421,11 +418,9 @@ export default {
             this.equipForm = [];
             this.formEquip.device = '';
             this.nodeinfoId = "";
-            this.form.nameId = '';
           } else {
             this.equipForm = arrgreen[0].node;
             this.formEquip.device = arrgreen[0].node[0].nodeId;
-            // this.form.nameId = arr1[0].greenhouse[0].node[0].nodeId;
             this.nodeinfoId = arrgreen[0].node[0].gatewayId;
             this.getGreenhouse(this.formEquip.device,this.nodeinfoId);
           }
@@ -435,12 +430,10 @@ export default {
           if (arr3.length == 0) {
             this.equipForm = [];
             this.formEquip.device = '';
-            this.form.nameId = '';
             this.nodeinfoId = "";
           } else {
             this.equipForm = arr3;
             this.formEquip.device = arr3[0].nodeId;
-            this.form.nameId = arr3[0].nodeId
             this.nodeinfoId = arr3[0].gatewayId;
             this.getGreenhouse(this.formEquip.device,this.nodeinfoId);
           }
@@ -569,8 +562,8 @@ export default {
     startflow (val) {
       this.st = val[0];
       this.et = val[1];
-      this.sysTypeAge(this.form.nameId,this.objNode,this.form.gatewayId,this.columnNameIndex);
-      this.weatherTable(this.form.nameId,this.objNode);
+      this.sysTypeAge(this.formEquip.device,this.objNode,this.form.gatewayId,this.columnNameIndex);
+      this.weatherTable(this.formEquip.device,this.objNode);
     },
     getImgUrl(icon){
        return this.urlImg + "img/greenhouse/" + icon
@@ -694,6 +687,8 @@ export default {
     },
     change2:function(val,gatewayId){
       this.getGreenhouse(val,gatewayId[0].gatewayId);
+      this.sysTypeAge(val,gatewayId[0].gatewayId,this.form.gatewayId,this.columnNameIndex);
+      this.weatherTable(val,gatewayId[0].gatewayId);
     },
     change3:function(key){
       let obj = {};
