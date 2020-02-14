@@ -175,12 +175,10 @@ export default {
   methods: {
 
     getImgUrl(icon){
-       return this.urlImg+"img/"+icon
-       // return "https://krjrobot.cn/krjrobot/img/"+icon
+       return this.urlImg + "img/" + icon
     },
     getImgUrl2(icon){
-       return this.urlImg+"img/"+icon
-       // return "https://krjrobot.cn/krjrobot/img/"+icon
+       return this.urlImg + "img/" + icon
     },
 
     async handleOpen (key, keyPath) {

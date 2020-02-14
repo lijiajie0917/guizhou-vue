@@ -106,7 +106,7 @@ export default {
       }
     },
     getImgUrl(icon){
-       return "https://krjrobot.cn/krjrobot/img/temp/"+icon
+      return this.urlImg + "img/temp/" + icon
     },
     setClass(key) {
       let obj = {alertPop: true}
