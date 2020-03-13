@@ -151,9 +151,9 @@ export default {
     this.hrefTxt = window.location.href.split("#/");
     this.hrefTxt = this.hrefTxt[1];
     // console.log("hahahah",this.hrefTxt);
-    // var sysType = JSON.parse(localStorage.getItem('sysType'));
+    var sysType = JSON.parse(localStorage.getItem('sysType'));
     // console.log("hahaahahaha----",sysType)
-    // this.sysType = sysType;
+    this.sysType = sysType;
     var prosItem = JSON.parse(localStorage.getItem('prosItem'));
     this.prosItem = prosItem;
     this.formProject.device = prosItem[0].id;
