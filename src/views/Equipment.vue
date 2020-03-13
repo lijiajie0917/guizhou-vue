@@ -713,7 +713,7 @@ export default {
     height: 54px;
   }
   .countentWorpEqu>.divActiveRight>.shujuLog>.el-form>.el-form-item{
-    margin-bottom: 15px;
+    margin-bottom: 0;
     margin-right: 20px;
   }
   .el-form-item{

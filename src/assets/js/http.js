@@ -11,7 +11,6 @@ const addURL = "https://dev.krjrobot.cn/krjrobot/";
 // 云服务器（生产环境）
 // const addURL = "https://krjrobot.cn/krjrobot/";
 
-
 // 定义一个插件对象
 const httpPlugin = {}
 // 为插件对象添加一个成员：install
@@ -20,7 +19,7 @@ const httpPlugin = {}
 
 const http = axios.create({
   // 云服务器（测试环境）
-  baseURL: addURL
+  baseURL: addURL,
 })
 /*
 添加请求拦截器
@@ -33,7 +32,7 @@ config就是你当前请求的配置对象
 // 让ajax携带cookie
 http.interceptors.request.use(function (config) {
   // 如果本次请求的不是/login的接口，我们就加入请求头
-  // console.log(config)
+
   // url 以 / 开头
   if (config.url !== '/signIn') {
     config.headers['Authorization'] = getUserInfo()
@@ -41,8 +40,21 @@ http.interceptors.request.use(function (config) {
     if (!data) {
       console.log('出错了')
     }
-    // console.log(getUserInfo())
   }
+
+  // 测试*******
+  var projectId = "2"
+  var hrefTxt = window.location.href.split("#/")[1];
+  if (hrefTxt == "Waterquality") {
+    projectId = "6"
+  } else if (hrefTxt == "Greenhouse") {
+    projectId = "7"
+  } else {
+    projectId = "2"
+  }
+  config.headers['projectId'] = projectId
+  // 测试******
+
   // return config就好比是next()允许通过
   // 通过之后才要真正的发起请求
   return config
