@@ -144,12 +144,19 @@ export default {
       asg:false,
       formProject:{device:''},
       flag3:true,
+      hrefTxt:""
     }
   },
   created: function () {
 
-      var sysType = JSON.parse(localStorage.getItem('sysType'));
-      this.sysType = sysType;
+
+    this.hrefTxt = window.location.href.split("#/");
+    this.hrefTxt = this.hrefTxt[1];
+    console.log("hahahah",this.hrefTxt);
+
+      // var sysType = JSON.parse(localStorage.getItem('sysType'));
+      // console.log("hahaahahaha----",sysType)
+      // this.sysType = sysType;
       var prosItem = JSON.parse(localStorage.getItem('prosItem'));
       this.prosItem = prosItem;
       this.formProject.device = prosItem[0].id;
@@ -162,6 +169,16 @@ export default {
       this.falg2 = true;
     }
   },
+mounted(){
+  if(this.hrefTxt == "Waterquality"){
+    this.formProject.device = 6;
+    this.change1();
+  }else if(this.hrefTxt == "Greenhouse"){
+    this.formProject.device = 7;
+    this.change1();
+  }
+
+},
   // watch:{
   //   $route(to,from){
   //     console.log(to.path);
@@ -240,7 +257,7 @@ export default {
       const res = await this.$http.get(`/project/sysType?projectId=`+ this.formProject.device,{headers: {'Content-Type': 'application/x-www-form-urlencoded'}})
       const data = res.data
       this.sysType = data.data;
-      // console.log(data.data[0].route);
+      console.log("555555",data.data);
       var str = data.data[0].route;
       str=str.slice(1)
       // console.log(str);
