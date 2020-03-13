@@ -148,18 +148,15 @@ export default {
     }
   },
   created: function () {
-
-
     this.hrefTxt = window.location.href.split("#/");
     this.hrefTxt = this.hrefTxt[1];
-    console.log("hahahah",this.hrefTxt);
-
-      // var sysType = JSON.parse(localStorage.getItem('sysType'));
-      // console.log("hahaahahaha----",sysType)
-      // this.sysType = sysType;
-      var prosItem = JSON.parse(localStorage.getItem('prosItem'));
-      this.prosItem = prosItem;
-      this.formProject.device = prosItem[0].id;
+    // console.log("hahahah",this.hrefTxt);
+    // var sysType = JSON.parse(localStorage.getItem('sysType'));
+    // console.log("hahaahahaha----",sysType)
+    // this.sysType = sysType;
+    var prosItem = JSON.parse(localStorage.getItem('prosItem'));
+    this.prosItem = prosItem;
+    this.formProject.device = prosItem[0].id;
     // console.log(this.sysType);
     // console.log(this.$route.path);
     this.userName = localStorage.username
@@ -257,7 +254,7 @@ mounted(){
       const res = await this.$http.get(`/project/sysType?projectId=`+ this.formProject.device,{headers: {'Content-Type': 'application/x-www-form-urlencoded'}})
       const data = res.data
       this.sysType = data.data;
-      console.log("555555",data.data);
+      // console.log("555555",data.data);
       var str = data.data[0].route;
       str=str.slice(1)
       // console.log(str);
