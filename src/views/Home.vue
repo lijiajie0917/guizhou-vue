@@ -41,7 +41,7 @@ import {MP} from '../map.js'
                      {name: '齐齐哈尔', value:[123.97,47.33,14]}
                   ];
 
-                  console.log(data);
+                  // console.log(data);
 
                   var option = {
                         title: {

@@ -118,7 +118,7 @@ export default {
 
       const res = await this.$http.post(`/data/homePage/${this.projectId}/${this.sysType}/${key}`,{headers: {'Content-Type': 'application/x-www-form-urlencoded'}})
       const data = res.data
-      console.log(data.data.soil);
+      // console.log(data.data.soil);
       if (data.status === '200') {
         this.columnPage = name;
         this.items2 = data.data.soil;

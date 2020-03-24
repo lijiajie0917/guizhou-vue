@@ -261,11 +261,11 @@ export default {
       if(num != 0){
         if(num>0){
           solit = solit+solitNum;
-          console.log(solit);
+          // console.log(solit);
           return solit;
         }else{
           solit = solit+solitNum;
-          console.log(solit);
+          // console.log(solit);
           return solit;
         }
       }else{

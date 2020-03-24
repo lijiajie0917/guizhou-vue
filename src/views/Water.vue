@@ -165,7 +165,7 @@ export default {
       })
       const res = await this.$http.post(`/data/statusNode/${this.sysType}/${gatewayId}`, json ,{headers: {'Content-Type': 'application/x-www-form-urlencoded'}})
       const data = res.data
-      console.log(data);
+      // console.log(data);
       this.tableData = data.data
     },
     formatter(row) {

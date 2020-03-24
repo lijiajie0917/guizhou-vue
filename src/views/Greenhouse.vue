@@ -388,7 +388,7 @@ export default {
           }
         } else if (array.level == "area") {
           var arr1 = array.value
-          console.log(arr1[0]);
+          // console.log(arr1[0]);
           this.formArea.area = arr1[0].area;
           this.greenhouseList = arr1;
           this.greenhouseInner = arr1[0].greenhouse;

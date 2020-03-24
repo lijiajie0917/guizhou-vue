@@ -144,7 +144,7 @@ export default {
     async getData2 (currentPage,pageSize) {
       const res = await this.$http.get(`/hw/data/${this.$route.params.deviceId}/${this.$route.params.profile}`,{params: {pageNo: currentPage,pageSize:pageSize}}, {headers: {'Content-Type': 'application/x-www-form-urlencoded'}})
       const data = res.data
-      console.log(data.data);
+      // console.log(data.data);
       if (data.status === '200') {
         this.total = data.data.totalCount
         var g = data.data.totalCount;

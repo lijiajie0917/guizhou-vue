@@ -226,11 +226,11 @@ export default {
       if(num != 0){
         if(num>0){
           solit = solit+solitNum;
-          console.log(solit);
+          // console.log(solit);
           return solit;
         }else{
           solit = solit+solitNum;
-          console.log(solit);
+          // console.log(solit);
           return solit;
         }
       }else{
@@ -288,7 +288,7 @@ export default {
       })
       const res = await this.$http.post(`/excel/soil/${nodeId}/${gatewayId}`, json ,{headers: {'Content-Type': 'application/x-www-form-urlencoded'}})
       const data = res.data
-      console.log(data.data.body);
+      // console.log(data.data.body);
       this.columName = data.data.name;
       this.columa = data.data.column;
       this.tableData3 = data.data.body;

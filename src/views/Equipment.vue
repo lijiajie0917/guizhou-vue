@@ -404,7 +404,7 @@ export default {
     async getData (currentPage,pageSize,pId) {
       const res = await this.$http.get(`/agent/${pId}`,{headers: {'Content-Type': 'application/x-www-form-urlencoded'}})
       const data = res.data
-      console.log(data);
+      // console.log(data);
       if (data.status === '200') {
         this.total = data.data.total
         var g = data.data.total;
@@ -687,12 +687,18 @@ export default {
       const res3 = await this.$http.get(`/group/unbind/${this.projectId}`,{params: {typeName:typeName}},{headers: {'Content-Type': 'application/x-www-form-urlencoded'}})
       const data3 = res3.data
       if (this.ccdd) {
-        console.log(data3.data);
+        // console.log(data3.data);
       } else {
-        this.jsItems6 = data3.data;
-        this.jsItemsId = data3.data[0].info;
-        this.jSform3.getewayId = data3.data[0].typeName;
-        this.jSform3.equipmentId = data3.data[0].info[0].localId;
+        if(data3.data.length > 0){
+          // console.log(data3.data);
+          this.jsItems6 = data3.data;
+          this.jsItemsId = data3.data[0].info;
+          this.jSform3.getewayId = data3.data[0].typeName;
+          this.jSform3.equipmentId = data3.data[0].info[0].localId;
+        }else{
+          // console.log(data3.data);
+        }
+
       }
     },
   }

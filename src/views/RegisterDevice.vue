@@ -104,7 +104,7 @@ export default {
     async getData () {
       const res = await this.$http.get(`/hw/zd/agent`, {headers: {'Content-Type': 'application/x-www-form-urlencoded'}})
       const data = res.data
-      console.log(data.data);
+      // console.log(data.data);
       if (data.status === '200') {
         this.tableData = data.data;
       } else if (data.status === '500') {

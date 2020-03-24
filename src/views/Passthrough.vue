@@ -83,7 +83,7 @@ export default {
     async getData (currentPage,pageSize,gatewayId) {
       const res = await this.$http.get(`/data/transfer`,{params: {gatewayId:gatewayId,nowpage: currentPage,pagesize:pageSize}}, {headers: {'Content-Type': 'application/x-www-form-urlencoded'}})
       const data = res.data
-      console.log(data);
+      // console.log(data);
       if (data.status === '200') {
         this.total = data.data.total
         var g = data.data.total;

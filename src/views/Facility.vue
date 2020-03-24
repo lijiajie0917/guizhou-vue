@@ -207,7 +207,7 @@ export default {
       this.nodes = data.data;
       this.form.profile = data.data[0].profile;
       this.form.nameId = "ONLINE";
-      console.log(data.data[0].profile);
+      // console.log(data.data[0].profile);
       this.getData(this.currentPage,this.pageSize,this.form.nameId,data.data[0].profile);
     },
     // 修改按钮
