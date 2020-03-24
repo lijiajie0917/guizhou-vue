@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import axios from 'axios'
 import router from '@/router/index'
+import store from '../../store'//引入store
 import {getUserInfo} from '@/assets/js/auth'
 
 
@@ -43,16 +44,18 @@ http.interceptors.request.use(function (config) {
   }
 
   // 测试*******
-  var projectId = "2"
-  var hrefTxt = window.location.href.split("#/")[1];
-  if (hrefTxt == "Waterquality") {
-    projectId = "6"
-  } else if (hrefTxt == "Greenhouse") {
-    projectId = "7"
-  } else {
-    projectId = "2"
-  }
-  config.headers['projectId'] = projectId
+  // var projectId = "2"
+  // var hrefTxt = window.location.href.split("#/")[1];
+  // if (hrefTxt == "Waterquality") {
+  //   projectId = "6"
+  // } else if (hrefTxt == "Greenhouse") {
+  //   projectId = "7"
+  // } else {
+  //   projectId = "2"
+  // }
+  // config.headers['projectId'] = projectId
+  // console.log(store.state.projectId);
+  config.headers['projectId'] = store.state.projectId
   // 测试******
 
   // return config就好比是next()允许通过

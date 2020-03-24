@@ -171,18 +171,7 @@ mounted(){
     this.change1();
   }
 },
-  // watch:{
-  //   $route(to,from){
-  //     console.log(to.path);
-  //     if (to.path == "/Pm") {
-  //       this.asg = false;
-  //     } else if (to.path == "/Table") {
-  //       this.asg = true;
-  //     }
-  //   }
-  // },
-  methods: {
-
+methods: {
     getImgUrl(icon){
        return this.urlImg + "img/" + icon
     },
@@ -246,6 +235,7 @@ mounted(){
       });
     },
     async change1 () {
+      this.$store.commit('setprojectId',this.formProject.device);
       const res = await this.$http.get(`/project/sysType?projectId=`+ this.formProject.device,{headers: {'Content-Type': 'application/x-www-form-urlencoded'}})
       const data = res.data
       this.sysType = data.data;

@@ -9,6 +9,7 @@ import router from './router'
 import $ from 'jquery'
 import httpPlugin from '@/assets/js/http'
 import 'echarts/extension/bmap/bmap';
+import store from './store'//引入store
 // import axios from 'axios'
 // import Qs from 'qs'
 import 'echarts/map/js/china.js';  //引入echarts中map.js
@@ -41,6 +42,7 @@ Vue.prototype.foo = 'bar'
 new Vue({
   el: '#app',
   router,
+  store,//使用store
   components: { App },
   template: '<App/>'
 })
