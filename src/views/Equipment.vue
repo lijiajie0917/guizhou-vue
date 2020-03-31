@@ -237,7 +237,7 @@ export default {
       pId:'',
       value: '0',
       gong:0,
-      projectId:7,
+      projectId:this.$store.state.projectId,
       typea:'soil',
       form:{county:'',area:'',greenhouse:'',getewayhouseId:''},
       jSform:{county:'',area:''},
